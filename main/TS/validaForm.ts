@@ -2,10 +2,10 @@ import { FormRegistrazione } from "./class/FormRegistrazione.js";
 
 //eseguo direttamente la funzione
 (() => {
-    "use strict";
     document.addEventListener("DOMContentLoaded", function () {
         const registrazioneForm = new FormRegistrazione();
     });
+
     const forms = document.querySelectorAll<HTMLFormElement>(".needs-validation");
     //ciclo tra i forms
     Array.from(forms).forEach((form) => {
