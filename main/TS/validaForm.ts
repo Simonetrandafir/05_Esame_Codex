@@ -2,7 +2,9 @@ import { FormRegistrazione } from "./class/FormRegistrazione.js";
 
 //eseguo direttamente la funzione
 (() => {
+    //Ascolto DOM
     document.addEventListener("DOMContentLoaded", function () {
+        //chiamo la classe di Registrazione che si avvia
         const registrazioneForm = new FormRegistrazione();
     });
 
