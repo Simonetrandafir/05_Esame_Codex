@@ -30,6 +30,8 @@
         <!--TODO: POPOLA NAZIONI-->
         <script defer type="module" src="./JSexit/controllers/nazioniController.js"></script>
 
+        <script defer type="module" src="./JSexit/setPsw.js"></script>
+
         <!-- ! SCRIPT EXTRA-->
         <!--TODO TEMA LIGHT-DARK-->
         <script defer src="js/color-modes.js"></script>
@@ -459,7 +461,12 @@
                                                         <div class="col-12">
                                                             <label for="psw" class="form-label">Password</label>
                                                             <div class="input-group has-validation">
-                                                                <span class="input-group-text bi bi-key-fill"></span>
+                                                                <span class="input-group-text p-0"
+                                                                    ><button
+                                                                        type="button"
+                                                                        class="btn border-none bi bi-eye showHide psw"
+                                                                    ></button
+                                                                ></span>
                                                                 <input
                                                                     type="password"
                                                                     class="form-control"
@@ -491,7 +498,12 @@
                                                                 >Conferma password</label
                                                             >
                                                             <div class="input-group has-validation">
-                                                                <span class="input-group-text bi bi-key"></span>
+                                                                <span class="input-group-text p-0">
+                                                                    <button
+                                                                        type="button"
+                                                                        class="btn border-none bi bi-eye showHide pswCheck"
+                                                                    ></button>
+                                                                </span>
                                                                 <input
                                                                     type="password"
                                                                     class="form-control"
