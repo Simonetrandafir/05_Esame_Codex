@@ -1,0 +1,19 @@
+{
+    "dependencies": {
+        "bootstrap": "^5.3.3",
+        "undici-types": "^6.10.1"
+    },
+    "devDependencies": {
+        "@types/node": "^20.12.2",
+        "typescript": "^5.4.3"
+    },
+    "name": "05_esame_trandafir",
+    "version": "1.0.0",
+    "description": "Esame Accademia Code",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Simone Trandafir",
+    "license": "ISC"
+}

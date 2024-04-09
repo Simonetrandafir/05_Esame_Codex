@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- ! ICONA PAGINA -->
+        <link rel="icon" type="svg" href="./assets/img/codexLogo.svg" />
+        <!-- ! TITOLO PAGINA -->
+        <title>Codex</title>
+
+        <!-- * BOOTSTRAP -->
+        <!-- ? STILE -->
+        <link rel="stylesheet" href="./assets/scss/index.min.css" />
+        <!-- ? ICONS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+        <!-- ? JS COMPLETO -->
+        <script defer src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- * FINE BOOTSTRAP -->
+
+        <!-- ! SCRIPT MAIN-->
+        <!--TODO: VALIDAZIONE FORM -->
+        <script defer type="module" src="./JSexit/validaForm.js"></script>
+        <!--TODO: POPOLA CITTA-->
+        <script defer type="module" src="./JSexit/controllers/cittaController.js"></script>
+        <!--TODO: POPOLA PROVINCIA-->
+        <script defer type="module" src="./JSexit/controllers/provinciaController.js"></script>
+        <!--TODO: POPOLA NAZIONI-->
+        <script defer type="module" src="./JSexit/controllers/nazioniController.js"></script>
+
+        <!-- ! SCRIPT EXTRA-->
+        <!--TODO TEMA LIGHT-DARK-->
+        <script defer src="js/color-modes.js"></script>
+        <!--TODO AUDIO BUTTON EFFECT-->
+        <script defer src="js/btn.js"></script>
+    </head>
+
+    <body style="overflow: hidden">
+        <div class="container-fluid">
+            <div
+                class="row d-flex flex-column-reverse-md flex-nowrap align-items-stretch justify-content-start fixed-top w-100 h-100 m-0 z-1"
+            >
+                <!-- ! NAVBAR -->
+                <header class="col w-100 p-0 position-absolute top-0 z-3">
+                    <nav class="navbar navbar-expand-md nav-bg p-1 pb-4" aria-label=".contenuto">
+                        <div class="container-fluid navIndex">
+                            <div
+                                class="d-flex justify-content-center align-items-center gap-lg-2 gap-1 text-decoration-none p-0"
+                            >
+                                <img src="./assets/img/codexLogo.svg" alt="logo" width="40" height="40" />
+                                <span class="fs-4 text-white pe-none">Codex</span>
+                            </div>
+                            <div class="">
+                                <!-- ! LOG IN -->
+                                <!-- * Button -->
+                                <button
+                                    type="button"
+                                    class="btn btn-sm btn-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#logModal"
+                                >
+                                    Accedi
+                                </button>
+
+                                <!-- * Modal -->
+                                <div
+                                    class="modal fade h-100 bg-black bg-gradient bg-opacity-75"
+                                    id="logModal"
+                                    data-bs-backdrop="static"
+                                    data-bs-keyboard="false"
+                                    tabindex="-1"
+                                    aria-labelledby="logModalLabel"
+                                    aria-hidden="true"
+                                >
+                                    <div class="modal-dialog modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="logModalLabel">Accedi</h1>
+                                                <button
+                                                    type="button"
+                                                    class="btn-close"
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Close"
+                                                ></button>
+                                            </div>
+                                            <!--TODO: FORM -->
+                                            <form
+                                                class="form-floating needs-validation overflow-auto"
+                                                data-form-type="accedi"
+                                                action="home.php"
+                                                novalidate
+                                            >
+                                                <div class="modal-body px-md-5">
+                                                    <div class="row g-3">
+                                                        <div class="col-12">
+                                                            <label for="usernameLog" class="form-label">Username</label>
+                                                            <div class="input-group has-validation">
+                                                                <span
+                                                                    class="input-group-text bi-person-fill-lock"
+                                                                ></span>
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    id="usernameLog"
+                                                                    placeholder=""
+                                                                    required
+                                                                    autocomplete="on"
+                                                                />
+                                                                <div class="invalid-feedback">
+                                                                    <span class="invalid-empty">
+                                                                        Username non valida
+                                                                    </span>
+                                                                    <br />
+                                                                    <span class="invalid-help"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <label for="emailLog" class="form-label">Email</label>
+                                                            <div class="input-group has-validation">
+                                                                <span class="input-group-text">@</span>
+                                                                <input
+                                                                    type="email"
+                                                                    class="form-control"
+                                                                    id="emailLog"
+                                                                    placeholder=""
+                                                                    required
+                                                                    autocomplete="on"
+                                                                />
+                                                                <div class="invalid-feedback">
+                                                                    <span class="invalid-empty">
+                                                                        Email non valida
+                                                                    </span>
+                                                                    <br />
+                                                                    <span class="invalid-help"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <label for="pswLog" class="form-label">Password</label>
+                                                            <div class="input-group has-validation">
+                                                                <span class="input-group-text bi bi-key"></span>
+                                                                <input
+                                                                    type="password"
+                                                                    class="form-control"
+                                                                    id="pswLog"
+                                                                    placeholder=""
+                                                                    required
+                                                                />
+                                                                <div class="invalid-feedback">
+                                                                    <span class="invalid-empty">
+                                                                        Password non valida
+                                                                    </span>
+                                                                    <br />
+                                                                    <span class="invalid-help"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="my-3 form-check border-bottom pb-3">
+                                                        <input
+                                                            type="checkbox"
+                                                            class="form-check-input"
+                                                            id="exampleCheck1"
+                                                        />
+                                                        <label class="form-check-label pe-auto" for="exampleCheck1"
+                                                            >Ricordami</label
+                                                        >
+                                                    </div>
+                                                    <p>
+                                                        Non hai ancora un'account ?
+                                                        <a
+                                                            class="pe-auto text-body-emphasis"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#registraModal"
+                                                        >
+                                                            Registrati
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-secondary"
+                                                        data-bs-dismiss="modal"
+                                                    >
+                                                        Chiudi
+                                                    </button>
+                                                    <input type="submit" class="btn btn-primary" value="Accedi" />
+                                                </div>
+                                            </form>
+                                            <!--TODO: FINE FORM-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ! FINE LOG IN -->
+
+                                <!-- ! SIGN UP -->
+                                <!-- * BUTTON -->
+                                <button
+                                    type="button"
+                                    class="btn btn-secondary btn-sm"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#registraModal"
+                                >
+                                    Registra
+                                </button>
+
+                                <!-- Modal -->
+                                <div
+                                    class="modal fade h-100 bg-black bg-gradient bg-opacity-75"
+                                    id="registraModal"
+                                    data-bs-backdrop="static"
+                                    data-bs-keyboard="false"
+                                    tabindex="3"
+                                    aria-labelledby="registraModalLabel"
+                                >
+                                    <div class="modal-dialog modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="registraModalLabel">Registrati</h1>
+                                                <button
+                                                    type="button"
+                                                    class="btn-close"
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Close"
+                                                ></button>
+                                            </div>
+                                            <!--TODO: FORM-->
+                                            <form
+                                                class="needs-validation overflow-auto"
+                                                novalidate
+                                                data-form-type="registra"
+                                            >
+                                                <div class="modal-body">
+                                                    <div class="row g-3">
+                                                        <div class="col-sm-6">
+                                                            <label for="nome" class="form-label">Nome</label>
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="nome"
+                                                                placeholder=""
+                                                                value=""
+                                                                required
+                                                            />
+                                                            <div class="invalid-feedback">
+                                                                <span class="invalid-help"></span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <label for="cognome" class="form-label">Cognome</label>
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="cognome"
+                                                                placeholder=""
+                                                                value=""
+                                                                required
+                                                            />
+                                                            <div class="invalid-feedback">
+                                                                <span class="invalid-help"></span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-12">
+                                                            <label for="sesso" class="form-label"
+                                                                >Sesso<span class="text-body-secondary"
+                                                                    >(Optional)</span
+                                                                ></label
+                                                            >
+                                                            <select class="form-select" id="sesso">
+                                                                <option value="0">Non specificato</option>
+                                                                <option value="1">Maschio</option>
+                                                                <option value="2">Femmina</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <hr class="my-4" />
+
+                                                        <div class="col-md-12 m-0">
+                                                            <label for="dataNascita">Data di nascita</label>
+                                                            <div class="input-group has-validation">
+                                                                <input
+                                                                    type="date"
+                                                                    class="form-control"
+                                                                    placeholder=""
+                                                                    aria-label=""
+                                                                    id="dataNascita"
+                                                                    aria-describedby="button-addon2"
+                                                                    required
+                                                                />
+                                                                <div class="invalid-feedback">
+                                                                    <span class="invalid-help"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <label for="nazione" class="form-label"
+                                                                >Nazione di nascita</label
+                                                            >
+                                                            <select class="form-select" id="nazione" required>
+                                                                <option value="0">Scegli...</option>
+                                                            </select>
+                                                            <div class="invalid-feedback">
+                                                                <span class="invalid-help"></span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <label for="citta" class="form-label"
+                                                                >Città
+                                                                <span class="text-body-secondary"
+                                                                    >(Residenza)</span
+                                                                ></label
+                                                            >
+                                                            <select class="form-select" id="citta" required>
+                                                                <option value="0">Scegli...</option>
+                                                            </select>
+                                                            <div class="invalid-feedback">
+                                                                <span class="invalid-help"></span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <label for="provinciaNascita" class="form-label"
+                                                                >Provincia
+                                                                <span class="text-body-secondary"
+                                                                    >(Residenza)</span
+                                                                ></label
+                                                            >
+                                                            <select class="form-select" id="provinciaNascita" required>
+                                                                <option value="">Scegli...</option>
+                                                            </select>
+                                                            <div class="invalid-feedback">
+                                                                <span class="invalid-help"></span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-8">
+                                                            <label for="indirizzo" class="form-label">Indirizzo</label>
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="indirizzo"
+                                                                placeholder="1234 Main St"
+                                                                required
+                                                            />
+                                                            <div class="invalid-feedback">
+                                                                <span class="invalid-help"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label for="civico" class="form-label">Civico</label>
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="civico"
+                                                                placeholder=""
+                                                                required
+                                                            />
+                                                            <div class="invalid-feedback">
+                                                                <span class="invalid-help"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr class="my-4" />
+
+                                                    <div class="row g-3">
+                                                        <div class="col-12">
+                                                            <label for="cittadinanza" class="form-label"
+                                                                >Cittadinanza</label
+                                                            >
+                                                            <div class="input-group has-validation">
+                                                                <span class="input-group-text bi bi-globe"></span>
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    id="cittadinanza"
+                                                                    placeholder=""
+                                                                    required
+                                                                />
+                                                                <div class="invalid-feedback">
+                                                                    <span class="invalid-help"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <label for="codFiscale" class="form-label"
+                                                                >Codice Fiscale</label
+                                                            >
+                                                            <div class="input-group has-validation">
+                                                                <span
+                                                                    class="input-group-text bi bi-card-heading"
+                                                                ></span>
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    id="codFiscale"
+                                                                    placeholder=""
+                                                                    oninput="this.value = this.value.toUpperCase()"
+                                                                />
+                                                                <div class="invalid-feedback">
+                                                                    <span class="invalid-help"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="my-4" />
+
+                                                    <div class="row g-3">
+                                                        <div class="col-12">
+                                                            <label for="username" class="form-label">Username</label>
+                                                            <div class="input-group has-validation">
+                                                                <span
+                                                                    class="input-group-text bi-person-fill-lock"
+                                                                ></span>
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    id="username"
+                                                                    placeholder="Username"
+                                                                    required
+                                                                    autocomplete="on"
+                                                                />
+                                                                <div class="invalid-feedback">
+                                                                    <span class="invalid-help"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <label for="email" class="form-label">Email</label>
+                                                            <div class="input-group has-validation">
+                                                                <span class="input-group-text">@</span>
+                                                                <input
+                                                                    type="email"
+                                                                    class="form-control"
+                                                                    id="email"
+                                                                    placeholder="Email"
+                                                                    required
+                                                                    autocomplete="on"
+                                                                />
+                                                                <div class="invalid-feedback">
+                                                                    <span class="invalid-help"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <label for="psw" class="form-label">Password</label>
+                                                            <div class="input-group has-validation">
+                                                                <span class="input-group-text bi bi-key-fill"></span>
+                                                                <input
+                                                                    type="password"
+                                                                    class="form-control"
+                                                                    id="psw"
+                                                                    placeholder=""
+                                                                    required
+                                                                />
+                                                                <div class="invalid-feedback">
+                                                                    <span class="invalid-help"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                id="pswProgress"
+                                                                class="progress d-none mt-2"
+                                                                role="progressbar"
+                                                                aria-valuemin="0"
+                                                                aria-valuemax="100"
+                                                                style="height: 9px"
+                                                            >
+                                                                <div
+                                                                    class="progress-bar progress-bar-striped bg-danger"
+                                                                    style="width: 0%; height: 9px"
+                                                                ></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <label for="pswCheck" class="form-label"
+                                                                >Conferma password</label
+                                                            >
+                                                            <div class="input-group has-validation">
+                                                                <span class="input-group-text bi bi-key"></span>
+                                                                <input
+                                                                    type="password"
+                                                                    class="form-control"
+                                                                    id="pswCheck"
+                                                                    placeholder=""
+                                                                    required
+                                                                />
+                                                                <div class="invalid-feedback">
+                                                                    <span class="invalid-help"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr class="my-4" />
+
+                                                    <div class="form-check">
+                                                        <input
+                                                            type="checkbox"
+                                                            class="form-check-input"
+                                                            id="preferito"
+                                                        />
+                                                        <label class="form-check-label" for="preferito"
+                                                            >Salva indirizzo come preferito
+                                                            <span class="text-body-secondary">(Optional)</span></label
+                                                        >
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input
+                                                            type="checkbox"
+                                                            class="form-check-input"
+                                                            id="checkDati"
+                                                            required
+                                                        />
+                                                        <label class="form-check-label" for="checkDati"
+                                                            >Accetto il trattamento dei dati personali</label
+                                                        >
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-secondary"
+                                                        data-bs-dismiss="modal"
+                                                    >
+                                                        Close
+                                                    </button>
+                                                    <button type="submit" id="registra" class="btn btn-primary">
+                                                        Registra
+                                                    </button>
+                                                </div>
+                                            </form>
+
+                                            <!--TODO: FINE FORM-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ! FINE SIGN UP -->
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+                <!-- ! FINE NAVBAR -->
+
+                <div class="col contenuto contMaxi p-0 overflow-auto">
+                    <!-- ! CONTENUTO -->
+
+                    <main class="mt-5">
+                        <!-- ! CAROSELLO INDEX -->
+                        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button
+                                    type="button"
+                                    data-bs-target="#myCarousel"
+                                    data-bs-slide-to="0"
+                                    class="active"
+                                    aria-current="true"
+                                    aria-label="Slide 1"
+                                ></button>
+                                <button
+                                    type="button"
+                                    data-bs-target="#myCarousel"
+                                    data-bs-slide-to="1"
+                                    aria-label="Slide 2"
+                                ></button>
+                                <button
+                                    type="button"
+                                    data-bs-target="#myCarousel"
+                                    data-bs-slide-to="2"
+                                    aria-label="Slide 3"
+                                ></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img
+                                        class="bd-placeholder-img object-fit-cover imgIndex"
+                                        width="100%"
+                                        height="100%"
+                                        src="https://placehold.co/1200x400"
+                                        aria-hidden="true"
+                                        preserveAspectRatio="xMidYMid slice"
+                                        focusable="false"
+                                        alt="place"
+                                    />
+                                    <div class="container">
+                                        <div class="carousel-caption text-start">
+                                            <h1>Example headline.</h1>
+                                            <p class="opacity-75">
+                                                Some representative placeholder content for the first slide of the
+                                                carousel.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        class="bd-placeholder-img object-fit-cover imgIndex"
+                                        width="100%"
+                                        height="100%"
+                                        src="https://placehold.co/1200x400"
+                                        aria-hidden="true"
+                                        preserveAspectRatio="xMidYMid slice"
+                                        focusable="false"
+                                        alt="place"
+                                    />
+                                    <div class="container">
+                                        <div class="carousel-caption">
+                                            <h1>Another example headline.</h1>
+                                            <p>
+                                                Some representative placeholder content for the second slide of the
+                                                carousel.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        class="bd-placeholder-img object-fit-cover imgIndex"
+                                        width="100%"
+                                        height="100%"
+                                        src="https://placehold.co/1200x400"
+                                        aria-hidden="true"
+                                        preserveAspectRatio="xMidYMid slice"
+                                        focusable="false"
+                                        alt="place"
+                                    />
+                                    <div class="container">
+                                        <div class="carousel-caption text-end">
+                                            <h1>One more for good measure.</h1>
+                                            <p>
+                                                Some representative placeholder content for the third slide of this
+                                                carousel.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#myCarousel"
+                                data-bs-slide="prev"
+                            >
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#myCarousel"
+                                data-bs-slide="next"
+                            >
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <!-- ! FINE CAROSELLO INDEX -->
+
+                        <div class="container marketing pe-none">
+                            <div class="container px-4 py-5">
+                                <h2 class="pb-2 border-bottom">Scopri di più</h2>
+
+                                <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5">
+                                    <div class="col d-flex flex-column align-items-start gap-2">
+                                        <h2 class="fw-bold text-body-emphasis">
+                                            Libera la tua visione, nessun limite con Codex!
+                                        </h2>
+                                        <p class="text-body-secondary">
+                                            Guarda ciò che vuoi ovunque. Disdici quando vuoi !
+                                            <br />
+                                            Vuoi guardare Codex?
+                                            <br />
+                                            Cosa aspetti premi il pulsante registrati ed effettua l'accesso!
+                                        </p>
+                                        <button
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#registraModal"
+                                            class="btn btn-primary btn-lg pe-auto"
+                                        >
+                                            Registrati
+                                        </button>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="row row-cols-1 row-cols-sm-2 g-4">
+                                            <div class="col d-flex flex-column gap-2">
+                                                <div
+                                                    class="icon-square text-body-emphasis p-2 rounded-3 d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+                                                >
+                                                    <span
+                                                        class="bi bi-camera-reels-fill"
+                                                        width="30px"
+                                                        height="30px"
+                                                    ></span>
+                                                </div>
+                                                <h4 class="fw-semibold mb-0 text-body-emphasis">Film & Serie Tv</h4>
+                                                <p class="text-body-secondary">
+                                                    Accedi a una vasta libreria di film e serie TV, pronti per essere
+                                                    guardati in qualsiasi momento.
+                                                </p>
+                                            </div>
+
+                                            <div class="col d-flex flex-column gap-2">
+                                                <div
+                                                    class="icon-square text-body-emphasis p-2 rounded-3 d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+                                                >
+                                                    <span class="bi bi-stars" width="30px" height="30px"></span>
+                                                </div>
+                                                <h4 class="fw-semibold mb-0 text-body-emphasis">Sempre nuovi</h4>
+                                                <p class="text-body-secondary">
+                                                    Resta al passo con le ultime uscite e gli aggiornamenti della tua
+                                                    serie preferita.
+                                                </p>
+                                            </div>
+
+                                            <div class="col d-flex flex-column gap-2">
+                                                <div
+                                                    class="icon-square text-body-emphasis p-2 rounded-3 d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+                                                >
+                                                    <span
+                                                        class="bi bi-person-bounding-box"
+                                                        width="30px"
+                                                        height="30px"
+                                                    ></span>
+                                                </div>
+                                                <h4 class="fw-semibold mb-0 text-body-emphasis">
+                                                    Feed incentrato sull'Utente
+                                                </h4>
+                                                <p class="text-body-secondary">
+                                                    Personalizza la tua esperienza con un feed che ti offre contenuti
+                                                    basati sui tuoi gusti e interessi.
+                                                </p>
+                                            </div>
+
+                                            <div class="col d-flex flex-column gap-2">
+                                                <div
+                                                    class="icon-square text-body-emphasis p-2 rounded-3 d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+                                                >
+                                                    <span
+                                                        class="bi bi-shield-lock-fill"
+                                                        width="30px"
+                                                        height="30px"
+                                                    ></span>
+                                                </div>
+                                                <h4 class="fw-semibold mb-0 text-body-emphasis">
+                                                    Sicurezza alla base di tutto
+                                                </h4>
+                                                <p class="text-body-secondary">
+                                                    Riposa tranquillo sapendo che la tua sicurezza è la nostra priorità,
+                                                    con misure robuste per proteggere i tuoi dati e la tua privacy.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- START THE FEATURETTES -->
+
+                            <hr class="featurette-divider" />
+
+                            <div class="row featurette">
+                                <div class="col-md-7">
+                                    <h2 class="featurette-heading fw-normal lh-1">
+                                        Guarda Codex ovunque
+                                        <span class="text-body-secondary"> senza limiti !</span>
+                                    </h2>
+                                    <p class="lead">
+                                        Con Codex, goditi film e serie TV in streaming senza limiti, su cellulare,
+                                        tablet o laptop. Porta l'intrattenimento sempre con te, scegliendo il
+                                        dispositivo che preferisci. Scopri la libertà di guardare dove vuoi e quando
+                                        vuoi!
+                                    </p>
+                                </div>
+                                <div class="col-md-5">
+                                    <img
+                                        src="./assets/img/esempiDispositivi.png"
+                                        width="300px"
+                                        height="300px"
+                                        alt="placeholder"
+                                    />
+                                </div>
+                            </div>
+
+                            <hr class="featurette-divider" />
+
+                            <div class="row featurette">
+                                <div class="col-md-7 order-md-2">
+                                    <h2 class="featurette-heading fw-normal lh-1">
+                                        Goditi Codex senza spese,
+                                        <span class="text-body-secondary">per sempre!</span>
+                                    </h2>
+                                    <p class="lead">
+                                        Con Codex, goditi un'esperienza senza limiti e senza costi nascosti per sempre!
+                                        Guarda film, serie TV e tanto altro ovunque tu sia, senza dover spendere un
+                                        centesimo. Registra un account ora, aggiungi qualche credito e inizia a
+                                        esplorare!
+                                    </p>
+                                </div>
+                                <div class="col-md-5 order-md-1">
+                                    <img
+                                        src="./assets/img/noMoney.png"
+                                        alt="placeholder"
+                                        width="300px"
+                                        height="300px"
+                                    />
+                                </div>
+                            </div>
+
+                            <hr class="featurette-divider" />
+
+                            <div class="row featurette">
+                                <div class="col-md-7">
+                                    <h2 class="featurette-heading fw-normal lh-1">
+                                        Scarica Serie Tv e Film,<span class="text-body-secondary"
+                                            >porta il divertimento ovunque vai</span
+                                        >
+                                    </h2>
+                                    <p class="lead">
+                                        Dove vuoi, quando vuoi e come vuoi scarica le serie TV e i film per guardarli
+                                        offline! Goditi l'intrattenimento in aereo, sul treno, ovunque tu sia. Non
+                                        perdere tempo, esplora adesso!
+                                    </p>
+                                </div>
+                                <div class="col-md-5">
+                                    <img src="assets/img/esempioScarica.png" width="300px" height="300px" alt="" />
+                                </div>
+                            </div>
+
+                            <!-- /END THE FEATURETTES -->
+                        </div>
+                        <!-- /.container -->
+                    </main>
+                    <!-- ! FINE CONTENUTO -->
+
+                    <!-- ! FOOTER -->
+                    <div class="container-fluid mt-3 bg-body-secondary">
+                        <footer class="py-5">
+                            <div class="row">
+                                <div class="col-md-5 offset-md-1 mb-3">
+                                    <form>
+                                        <h5>Registrati alla nostra NewsLetters</h5>
+                                        <p>
+                                            Vuoi ricevere aggiornamenti settimanali?
+                                            <br />
+                                            Clicca sul pulsante ed effettua l'iscrizione, non te ne pentirai !
+                                        </p>
+                                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                            <label for="newsletter1" class="visually-hidden">Email...</label>
+                                            <input
+                                                id="newsletter1"
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Email..."
+                                            />
+                                            <button class="btn btn-primary" type="button">Registarti</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <hr class="hr" />
+                            <div class="d-flex flex-column flex-sm-row justify-content-between">
+                                <p>&copy; 2024 Codex, Inc. All rights reserved.</p>
+                                <ul class="list-unstyled d-flex">
+                                    <li class="ms-3">
+                                        <a class="link-body-emphasis" href="#">
+                                            <i class="bi bi-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li class="ms-3">
+                                        <a class="link-body-emphasis" href="#">
+                                            <i class="bi bi-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="ms-3">
+                                        <a class="link-body-emphasis" href="#">
+                                            <i class="bi bi-github"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </footer>
+                    </div>
+
+                    <!-- ! FINE FOOTER -->
+                </div>
+            </div>
+        </div>
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header py-1 px-3">
+                    <i class="bi bi-exclamation-triangle text-danger d-none"></i>
+                    <i class="bi bi-check2-circle text-success d-none"></i>
+                    <strong class="me-auto ps-2"></strong>
+                    <button type="button" class="btn-close closeToast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body rounded-bottom"></div>
+            </div>
+        </div>
+    </body>
+</html>

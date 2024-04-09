@@ -1,0 +1,10 @@
+import { CsvController } from "../class/CsvController.js";
+const idSelect = "provinciaNascita";
+try {
+    const csvController = new CsvController();
+    csvController.indexProvincia(idSelect);
+}
+catch (error) {
+    console.error("PC-0" + error);
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJvdmluY2lhQ29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL1RTL2NvbnRyb2xsZXJzL3Byb3ZpbmNpYUNvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLDJCQUEyQixDQUFDO0FBRzFELE1BQU0sUUFBUSxHQUFHLGtCQUFrQixDQUFDO0FBRXBDLElBQUksQ0FBQztJQUNELE1BQU0sYUFBYSxHQUFHLElBQUksYUFBYSxFQUFFLENBQUM7SUFFMUMsYUFBYSxDQUFDLGNBQWMsQ0FBQyxRQUFRLENBQUMsQ0FBQztBQUMzQyxDQUFDO0FBQUMsT0FBTyxLQUFLLEVBQUUsQ0FBQztJQUNiLE9BQU8sQ0FBQyxLQUFLLENBQUMsTUFBTSxHQUFHLEtBQUssQ0FBQyxDQUFDO0FBQ2xDLENBQUMifQ==

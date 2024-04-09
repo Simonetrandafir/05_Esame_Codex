@@ -1,0 +1,122 @@
+@import "palette";
+
+//? Sovrascrivi le variabili di colore
+
+//? BUTTON
+.btn-primary {
+    // --bs-btn-font-weight: 600;
+    --bs-btn-color: $scuro;
+    // --bs-btn-bg: var(--bd-violet-bg);
+    // --bs-btn-border-color: var(--bd-violet-bg);
+    // --bs-btn-hover-color: var(--bs-white);
+    // --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+    // --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+    // --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    // --bs-btn-active-color: var(--bs-btn-hover-color);
+    // --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+    // --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}
+.btn-secondary {
+    // --bs-btn-font-weight: 600;
+    --bs-btn-color: $chiaro;
+    // --bs-btn-bg: var(--bd-violet-bg);
+    // --bs-btn-border-color: var(--bd-violet-bg);
+    // --bs-btn-hover-color: var(--bs-white);
+    // --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+    // --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+    // --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    // --bs-btn-active-color: var(--bs-btn-hover-color);
+    // --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+    // --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+}
+$input-btn-focus-color: magenta;
+$btn-color: $chiaro;
+$btn-link-color: green;
+$btn-hover-color: green;
+$btn-link-focus-shadow-rgb: green;
+// $btn-hover-bg-shade-amount:       15%;
+// $btn-hover-bg-tint-amount:        15%;
+// $btn-hover-border-shade-amount:   20%;
+// $btn-hover-border-tint-amount:    10%;
+// $btn-active-bg-shade-amount:      20%;
+// $btn-active-bg-tint-amount:       20%;
+// $btn-active-border-shade-amount:  25%;
+// $btn-active-border-tint-amount:   10%;
+
+//? FOCUS RING
+$focus-ring-width: 0.25rem;
+$focus-ring-opacity: 0.25;
+$focus-ring-color: rgba($primary, $focus-ring-opacity);
+$focus-ring-blur: 0;
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
+
+//! ------- TEMA -------------------------------------------------------------------
+//? INPUT
+$input-border-color: $tintaScuro-100;
+$input-btn-focus-color: none;
+
+//TODO: LIGHT TEMA
+//? BACKGROUND
+$body-bg: $chiaro;
+$body-secondary-bg: $tintaChiaro-100;
+$body-tertiary-bg: $tintaChiaro-200;
+//? COLOR
+$body-color: $tintaScuro-100;
+$body-secondary-color: $tintaScuro-200;
+$body-tertiary-color: $tintaScuro-100;
+$body-emphasis-color: $scuro;
+//? BORDER
+$border-color: $tintaScuro-300;
+$border-color-translucent: rgba(white, 0.15);
+//? LINK
+// $link-color: $primary !default;
+// $link-decoration: underline !default;
+// $link-shade-percentage: 20% !default;
+// $link-hover-color: shift-color($link-color, $link-shade-percentage) !default;
+// $link-hover-decoration: null !default;
+//? BG-SUBTLE
+// $primary-bg-subtle: "";
+// $secondary-bg-subtle: "";
+// $success-bg-subtle: "";
+// $info-bg-subtle: "";
+// $warning-bg-subtle: "";
+// $danger-bg-subtle: "";
+// $light-bg-subtle: "";
+// $dark-bg-subtle: $contrasto-300;
+//? NAV
+$navbar-light-color: magenta;
+$navbar-light-hover-color: magenta;
+$navbar-light-active-color: yellow;
+//? PROGRESS
+$progress-bg: $tintaScuro-200;
+
+//TODO: DARK THEMA
+//? BACKGROUND
+$body-bg-dark: rgb(157, 179, 157);
+$body-secondary-bg-dark: orange;
+$body-tertiary-bg-dark: rgb(156, 156, 156);
+//? COLOR
+$body-color-dark: rgb(242, 255, 0);
+$body-secondary-color-dark: orange;
+$body-tertiary-color-dark: red;
+$body-emphasis-color-dark: rgb(123, 0, 20);
+//? BORDER
+$border-color-dark: magenta;
+$border-color-translucent-dark: rgba(white, 0.15);
+$body-bg-dark: rgb(38, 38, 139);
+//? LINK
+// $link-color-dark: tint-color($primary, 40%) !default;
+// $link-hover-color-dark: shift-color($link-color-dark, -$link-shade-percentage) !default;
+//? BG-SUBTLE
+// $primary-bg-subtle-dark: "";
+// $secondary-bg-subtle-dark: "";
+// $success-bg-subtle-dark: "";
+// $info-bg-subtle-dark: "";
+// $warning-bg-subtle-dark: "";
+// $danger-bg-subtle-dark: "";
+// $light-bg-subtle-dark: "";
+// $dark-bg-subtle-dark: "";
+//? NAV
+// $navbar-dark-color: rgba($white, 0.55);
+// $navbar-dark-hover-color: rgba($white, 0.75);
+// $navbar-dark-active-color: $white;

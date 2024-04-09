@@ -1,0 +1,241 @@
+/* WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 0px; /* larghezza della scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    /* colore dello sfondo della scrollbar */
+    background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff00; /* colore del thumb della scrollbar */
+}
+
+/* Firefox */
+::-moz-scrollbar {
+    width: 0px;
+}
+
+::-moz-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+::-moz-scrollbar-thumb {
+    background: #ffffff00;
+}
+
+/* Internet Explorer / Edge */
+::-ms-scrollbar {
+    width: 0px;
+}
+
+::-ms-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+::-ms-scrollbar-thumb {
+    background: #ffffff00;
+}
+
+.overflow-x-clip {
+    overflow-x: clip;
+}
+
+.sideBar {
+    transition: 0.3s ease;
+    font-size: 18px !important;
+}
+
+.btnSide {
+    transition: 0.6s ease;
+}
+
+#sideList {
+    transition: 0.2s ease;
+}
+
+.navBarSpec {
+    transition: 0.1s ease;
+}
+.nav-bg {
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgb(0 0 0 / 31%) 13%,
+        rgba(0, 0, 0, 0.756827731092437) 29%,
+        rgb(0 0 0) 36%,
+        rgb(0 0 0) 50%
+    );
+}
+.pe-auto {
+    cursor: pointer;
+}
+.tema {
+    color: aliceblue;
+}
+.film {
+    width: 1500px;
+    z-index: 1;
+    position: relative;
+}
+.cardSpecial {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    width: 0px;
+    height: 0px;
+    top: -199px;
+}
+
+.cardSpecial.hovered {
+    transform: scale(110%);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.colCard {
+    height: 170px;
+}
+.colCardHover {
+    width: 100%;
+}
+.card {
+    min-width: 240px;
+    transition: 0.3s ease;
+}
+.titoloCards {
+    top: 73% !important;
+    left: 9% !important;
+    transition: 0.9s ease;
+    transform: translateY(0);
+}
+.cardsInfo {
+    transition: 0.3s ease;
+}
+.txtJ {
+    max-height: 366px;
+    text-align: justify;
+}
+#locandina {
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.9108893557422969) 0%,
+        rgba(0, 0, 0, 1) 10%,
+        rgba(0, 0, 0, 0.21621148459383754) 30%,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0) 90%,
+        rgba(0, 0, 0, 1) 100%
+    );
+}
+.locandina2 {
+    height: 161px !important;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 1) 2%,
+        rgba(0, 0, 0, 0.7596288515406162) 15%,
+        rgba(0, 0, 0, 0.5775560224089635) 23%,
+        rgba(0, 0, 0, 0.303046218487395) 32%,
+        rgba(0, 0, 0, 0.1741946778711485) 39%,
+        rgba(0, 0, 0, 0.050945378151260545) 50%,
+        rgba(251, 251, 251, 0) 60%
+    );
+}
+.modal-backdrop {
+    z-index: 0;
+}
+.text-truncate {
+    max-width: 530px;
+}
+.text-justify {
+    text-align: justify;
+}
+.imgEpisodi {
+    width: 21%;
+}
+.border-none {
+    border: none !important;
+}
+.badgePersonale {
+    left: 2% !important;
+    top: 12% !important;
+}
+.imgSpeciale {
+    object-fit: fill;
+    max-width: 50%;
+    height: 100%;
+}
+.esci {
+    width: 90% !important;
+}
+.navBar {
+    height: 46px !important;
+}
+.imgElemento {
+    background-size: cover;
+    background-position: center;
+    height: 560px;
+}
+.prevBtn {
+    width: 24px !important;
+}
+.nextBtn {
+    width: 24px !important;
+}
+
+@media (max-width: 767px) {
+    .flex-column-reverse-md {
+        flex-direction: column-reverse !important;
+    }
+    .contenuto {
+        height: 94% !important;
+    }
+    #sideList {
+        height: 100% !important;
+        display: contents !important;
+    }
+    #imgCarosell {
+        height: 360px;
+    }
+    .sideBar {
+        height: 9%;
+    }
+    .navList li a span {
+        display: none;
+    }
+    .imgIndex {
+        min-height: 250px;
+    }
+    .imgEpisodi {
+        width: 40%;
+    }
+    .text-truncate {
+        max-width: 200px;
+    }
+}
+@media (max-width: 768px) {
+    .imgElemento {
+        height: 300px;
+    }
+}
+@media (min-width: 1023px) {
+    .mini {
+        width: 6% !important;
+    }
+    .maxi {
+        width: 14% !important;
+    }
+    .contMini {
+        width: 86% !important;
+    }
+    .contMaxi {
+        width: 94% !important;
+    }
+    .navMini {
+        width: 86%;
+    }
+    .navMaxi {
+        width: 94%;
+    }
+}
