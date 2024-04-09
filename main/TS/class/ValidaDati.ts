@@ -70,6 +70,7 @@ export class ValidaDati {
                 { test: testPswCheck, errore: errorePswCheck, input: datiInput.pswCheck },
             ];
 
+            //gestisco errori
             campiDaValidare.forEach((campo) => {
                 classErrori.gestisciErrore([campo.test, campo.errore], campo.input);
             });
@@ -78,6 +79,7 @@ export class ValidaDati {
 
             classErrori.gestisciCheckDati(valoreCheckDati, datiInput.checkDati);
 
+            //controllo cittaddinza per abilitare cod fiscale e ritorno le validazioni in base a cod fiscale se presente
             const cittadinanzeConsentite = ["ita", "ital", "itali", "italia", "italian", "italiano", "italiana"];
             if (cittadinanzeConsentite.includes(datiValue.cittadinanza.toLowerCase())) {
                 const [testCodFiscale, erroreCodFiscale] = this.validaCodFiscale(datiValue.codFiscale);
