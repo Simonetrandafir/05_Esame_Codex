@@ -3,11 +3,52 @@ import { Utility } from "./Utility.js";
 
 const lettereItalia = "àòèéìù";
 
+/**
+ * Classe per la validazione dati
+ * Prende l'input dei dati utente e li gestisce tramite funzioni private
+ *
+ * @param datiInput RecInput
+ * @returns boolean
+ * @function controlloCampiRec
+ * @private gestisciControllo
+ */
 export class ValidaDati {
+    /**
+     * Chiama la funzione di gestione della validazione
+     *
+     * @private gestisciControllo()
+     * @param datiInput object
+     * @returns boolean
+     */
     public static controlloCampiRec(datiInput: RecInput): boolean {
         return this.gestisciControllo(datiInput);
     }
 
+    //!---------------------------------------- PRIVATE --------------------------------------------------------------------
+
+    /**
+     * Prende tutti i dati in input dal form e ritorna un boolean per la validazione
+     * richiamando le funzioni private per la validazione
+     *
+     * @param datiInput
+     * @class Errori
+     * @returns boolean
+     * @private validaNome
+     * @private validaCognome
+     * @private validaData
+     * @private validaNazione
+     * @private validaCitta
+     * @private validaProvincia
+     * @private validaIndirizzo
+     * @private validaCivico
+     * @private validaCittadinanza
+     * @private validaCodFiscale
+     * @private validaUsername
+     * @private validaEmail
+     * @private validaPsw
+     * @private validaPswCheck
+     * @private validaCheckDati
+     */
     private static gestisciControllo(datiInput: RecInput): boolean {
         let risult: boolean = false;
         try {
@@ -125,6 +166,12 @@ export class ValidaDati {
         return risult;
     }
 
+    /**
+     * Controlla se il nome is valido con una RegExp
+     *
+     * @param nome string
+     * @returns [boolean,string]
+     */
     private static validaNome(nome: string): [boolean, string] {
         let msgErrore: string = "";
         const nomeUtente: string = nome.trim();
@@ -143,7 +190,12 @@ export class ValidaDati {
             msgErrore,
         ];
     }
-
+    /**
+     * Controlla se il cognome is valido con una RegExp
+     *
+     * @param cognome string
+     * @returns [boolean,string]
+     */
     private static validaCognome(cognome: string): [boolean, string] {
         let msgErrore = "";
         const cognomeUtente: string = cognome.trim();
@@ -162,7 +214,12 @@ export class ValidaDati {
             msgErrore,
         ];
     }
-
+    /**
+     * Controlla la data se is valida con una RegExp
+     *
+     * @param dataNascita string
+     * @returns [boolean,string]
+     */
     private static validaData(dataNascita: string): [boolean, string] {
         let msgErrore: string = "";
         const dataUtente: string = dataNascita.trim();
@@ -174,7 +231,12 @@ export class ValidaDati {
         }
         return [dataUtente !== "" && regex.test(dataUtente), msgErrore];
     }
-
+    /**
+     * Controlla la nazione tramite numeri prestabiliti
+     *
+     * @param nazione number
+     * @returns [boolean,string]
+     */
     private static validaNazione(nazione: number): [boolean, string] {
         let msgErrore: string = "";
         if (nazione === 0) {
@@ -184,7 +246,12 @@ export class ValidaDati {
         }
         return [nazione !== 0 && nazione <= 252, msgErrore];
     }
-
+    /**
+     * Controlla la citta tramite numeri prestabiliti
+     *
+     * @param citta number
+     * @returns [boolean,string]
+     */
     private static validaCitta(citta: number): [boolean, string] {
         let msgErrore: string = "";
         if (citta === 0) {
@@ -194,7 +261,12 @@ export class ValidaDati {
         }
         return [citta !== 0 && citta <= 7981, msgErrore];
     }
-
+    /**
+     * Controlla la provincia tramite una RegExp
+     *
+     * @param provincia stringa
+     * @returns [boolean,string]
+     */
     private static validaProvincia(provincia: string): [boolean, string] {
         let msgErrore: string = "";
         const provinciaUtente: string = provincia.trim();
@@ -206,7 +278,12 @@ export class ValidaDati {
         }
         return [provinciaUtente !== "" && regex.test(provinciaUtente), msgErrore];
     }
-
+    /**
+     * Controlla l'indirizzo tramite una RegExp
+     *
+     * @param indirizzo string
+     * @returns [boolean,string]
+     */
     private static validaIndirizzo(indirizzo: string): [boolean, string] {
         let msgErrore = "";
         const indirizzoUtente: string = indirizzo.trim();
@@ -228,7 +305,12 @@ export class ValidaDati {
             msgErrore,
         ];
     }
-
+    /**
+     * Controlla il civico tramite una RegExp
+     *
+     * @param civico string
+     * @returns [boolean,string]
+     */
     private static validaCivico(civico: string): [boolean, string] {
         let msgErrore = "";
         const civicoUtente: string = civico.trim();
@@ -240,7 +322,12 @@ export class ValidaDati {
         }
         return [civicoUtente !== "" && regex.test(civicoUtente), msgErrore];
     }
-
+    /**
+     * Controlla la cittadinanza tramite una RegExp
+     *
+     * @param cittadinanza string
+     * @returns [boolean,string]
+     */
     private static validaCittadinanza(cittadinanza: string): [boolean, string] {
         let msgErrore: string = "";
         const cittadinanzaUtente: string = cittadinanza.trim();
@@ -262,8 +349,13 @@ export class ValidaDati {
             msgErrore,
         ];
     }
-
-    //TODO: DA SISTEMARE
+    /**
+     * Controlla il Codice Fiscale italiano tramite una chiamata ad una classe esterna
+     *
+     * @class Utility
+     * @param codFiscale string
+     * @returns [boolean,string]
+     */
     private static validaCodFiscale(codFiscale: string): [boolean, string] {
         let msgErrore: string = "";
         const codFiscaleUtente: string = codFiscale.trim();
@@ -282,8 +374,13 @@ export class ValidaDati {
             codFiscaleUtente !== "" && codFiscaleUtente.length > 2 && codFiscaleUtente.length <= 16 && controllo,
             msgErrore,
         ];
-    }
-
+    } //TODO: DA SISTEMARE
+    /**
+     * Controlla l'Username tramite una RegExp
+     *
+     * @param username string
+     * @returns [boolean,string]
+     */
     private static validaUsername(username: string): [boolean, string] {
         let msgErrore: string = "";
         const usernameUtente: string = username.trim();
@@ -305,7 +402,12 @@ export class ValidaDati {
             msgErrore,
         ];
     }
-
+    /**
+     * Controlla l'email tramite una RegExp
+     *
+     * @param email string
+     * @returns [boolean,string]
+     */
     private static validaEmail(email: string): [boolean, string] {
         let msgErrore: string = "";
         const emailUtente: string = email.trim();
@@ -319,7 +421,13 @@ export class ValidaDati {
         }
         return [emailUtente !== "" && regex.test(emailUtente) && emailUtente.length <= 45, msgErrore];
     }
-
+    /**
+     * Controlla la password tramite una chimata ad una classe estrena
+     *
+     * @class Utility
+     * @param psw string
+     * @returns [boolean,string,number]
+     */
     private static validaPsw(psw: string): [boolean, string, number] {
         let msgErrore: string = "";
         const pswUtente: string = psw.trim();
@@ -345,7 +453,13 @@ export class ValidaDati {
             percentuale,
         ];
     }
-
+    /**
+     * Controlla la conferma della password che coincida con la password
+     *
+     * @param pswCheck string
+     * @param psw string
+     * @returns [boolean,string]
+     */
     private static validaPswCheck(pswCheck: string, psw: string): [boolean, string] {
         let msgErrore: string = "";
         const pswCheckUtente: string = pswCheck.trim();
@@ -367,7 +481,12 @@ export class ValidaDati {
             msgErrore,
         ];
     }
-
+    /**
+     * Controlla se la conferma al trattamento dati is true o false
+     *
+     * @param checkDati number
+     * @returns boolean
+     */
     private static validaCheckDati(checkDati: number): boolean {
         if (checkDati === 1) {
             return true;
